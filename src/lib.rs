@@ -35,6 +35,40 @@ pub fn hexxyln(n: usize, underscores: bool) {
     println!("{}", hexxy(n, underscores));
 }
 
+/// Returns a hexxagon with a given size.
+///
+/// ```no_run
+///  /--\
+/// /    \
+/// \    /
+///  \--/
+/// ```
+pub fn hexxagon(n: usize) -> String {
+    let mut s = String::new();
+    for i in 0..n {
+        s.push_str(&" ".repeat(n - i - 1));
+        s.push('/');
+        s.push_str(&(if i == 0 { "-" } else { " " }).repeat(n + (i * 2)));
+        s.push('\\');
+        s.push('\n');
+    }
+    for i in (0..n).rev() {
+        s.push_str(&" ".repeat(n - i - 1));
+        s.push('\\');
+        s.push_str(&(if i == 0 { "-" } else { " " }).repeat(n + (i * 2)));
+        s.push('/');
+        if i != 0 {
+            s.push('\n');
+        }
+    }
+    return s;
+}
+
+/// Prints a hexxagon with a given size to the terminal, using `println!`.
+pub fn hexxagonln(n: usize) {
+    println!("{}", hexxagon(n));
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
