@@ -1,0 +1,13 @@
+[package]
+name = "hexxy"
+version = "1.0.0"
+edition = "2024"
+license = "CC0-1.0"
+authors = ["ruby"]
+description = "Hexxy all over the place!"
+repository = "https://g.tizu.dev/rusthexxy"
+readme = "README.md"
+keywords = ["joke", "ascii", "hexxy"]
+
+[lib]
+doctest = false
