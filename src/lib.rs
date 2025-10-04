@@ -30,6 +30,11 @@ pub fn hexxy(n: usize, underscores: bool) -> String {
     return s;
 }
 
+/// Prints a hexxy with a given size to the terminal, using `println!`.
+pub fn hexxyln(n: usize, underscores: bool) {
+    println!("{}", hexxy(n, underscores));
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
